@@ -32,4 +32,8 @@ $RECYCLE.BIN/
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
+<<<<<<< HEAD
 */build/*
+=======
+*/build/*
+>>>>>>> 55d0982f6336a353433f5ddba887c037b2ef44b8

@@ -23,12 +23,31 @@
 
 <ion-content padding>
   <div>
-    <h1 text-center>Dedicate this page to Organize</h1>
+    <h1 text-center>Organize a Campaign</h1>
     <div></div>
     <p text-center></p>
   </div>
 
-  
+  <ion-list>
+
+    <ion-item>
+      <ion-input type="text" placeholder="What's the name of your campaign?" name = "title"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder="When is your campaign?" name = "date"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder="Where's your campaign located?" name = "location"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder="What's the campaign about?" name = "description"></ion-input>
+    </ion-item>
+
+  </ion-list>
+  <button ion-button (click)="addCampaign(title, date, location, description)">Submit</button>
 </ion-content>
 
 
