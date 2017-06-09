@@ -27459,6 +27459,10 @@ ion-col {
   text-align: center;
 }
 
+ion-footer {
+  height: 15%;
+}
+
 page-campaigns ion-col {
   text-align: center;
 }
