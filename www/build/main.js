@@ -55834,7 +55834,7 @@ var CampaignsPage = (function () {
 CampaignsPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-campaigns',template:/*ion-inline-start:"/Users/andrewwong/dev/NDMobileApp/src/pages/campaigns/campaigns.html"*/'<!--\n  Generated template for the OrganizePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header >\n  <ion-navbar color="secondary">\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <img align="left" width="30%" src="networkDE.png"/>\n        </ion-col>\n        <button ion-button menuToggle right>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n      </ion-row>\n    </ion-grid>\n  </ion-navbar>\n  \n</ion-header>\n \n\n<ion-content padding>\n\n  <div class="section-heading scrollpoint sp-effect3">\n    <h1 text-center>Dedicate this page to Campaigns</h1>\n    <div class="divider"></div>\n    <p text-center></p>\n  </div>\n\n  <div>\n    <ion-list>\n      <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">\n        <ion-icon [name]="item.icon" item-left></ion-icon>\n        {{item.title}}\n        <div class="item-note" item-right>\n          {{item.date}}\n        </div>\n      </button>\n    </ion-list>\n  </div>\n</ion-content>\n\n\n<ion-footer>\n  <ion-toolbar color="secondary">\n    <ion-grid>\n      <ion-row center>\n        <ion-col>\n         <img width="35%" src="networkDE.png"/> \n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n      <a href="https://twitter.com/thenetworkde?lang=en"><img width="10%" src="twittericon.png"/></a>\n      <a href="https://www.facebook.com/thenetworkde/"><img width="10%" src="facebookicon.png"/></a> \n        </ion-col>\n      </ion-row>\n      </ion-grid>\n      <p text-center>Copyright &copy; 2017</p>\n  </ion-toolbar>\n</ion-footer>\n\n\n'/*ion-inline-end:"/Users/andrewwong/dev/NDMobileApp/src/pages/campaigns/campaigns.html"*/,
+        selector: 'page-campaigns',template:/*ion-inline-start:"/Users/andrewwong/dev/NDMobileApp/src/pages/campaigns/campaigns.html"*/'<!--\n  Generated template for the OrganizePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header >\n  <ion-navbar color="secondary">\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <img align="left" width="30%" src="networkDE.png"/>\n        </ion-col>\n        <button ion-button menuToggle right>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n      </ion-row>\n    </ion-grid>\n  </ion-navbar>\n  \n</ion-header>\n \n\n<ion-content padding>\n\n  <div class="section-heading scrollpoint sp-effect3">\n    <h1 text-center>Open Campaigns</h1>\n    <div class="divider"></div>\n    <p text-center></p>\n  </div>\n\n  <div>\n    <ion-list>\n      <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">\n        <ion-icon [name]="item.icon" item-left></ion-icon>\n        {{item.title}}\n        <div class="item-note" item-right>\n          {{item.date}}\n        </div>\n      </button>\n    </ion-list>\n  </div>\n</ion-content>\n\n\n<ion-footer>\n  <ion-toolbar color="secondary">\n    <ion-grid>\n      <ion-row center>\n        <ion-col>\n         <img width="35%" src="networkDE.png"/> \n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n      <a href="https://twitter.com/thenetworkde?lang=en"><img width="10%" src="twittericon.png"/></a>\n      <a href="https://www.facebook.com/thenetworkde/"><img width="10%" src="facebookicon.png"/></a> \n        </ion-col>\n      </ion-row>\n      </ion-grid>\n      <p text-center>Copyright &copy; 2017</p>\n  </ion-toolbar>\n</ion-footer>\n\n\n'/*ion-inline-end:"/Users/andrewwong/dev/NDMobileApp/src/pages/campaigns/campaigns.html"*/,
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object])
 ], CampaignsPage);
@@ -55939,6 +55939,7 @@ DonatePage = __decorate([
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__campaigns_campaigns__ = __webpack_require__(98);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrganizePage; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -55951,6 +55952,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 /**
  * Generated class for the OrganizePage page.
  *
@@ -55958,9 +55960,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * on Ionic pages and navigation.
  */
 var OrganizePage = (function () {
-    function OrganizePage(navCtrl, navParams) {
+    function OrganizePage(navCtrl, navParams, campaignsPage) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.campaignsPage = campaignsPage;
+        this.addCampaign = function (_title, _date, _location, _description) {
+            this.campaignsPage.items.push({
+                title: _title,
+                date: _date,
+                note: _description,
+                location: _location,
+                icon: 'megaphone'
+            });
+            console.log(this.campaignsPage.items);
+        };
     }
     OrganizePage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad OrganizePage');
@@ -55970,35 +55983,13 @@ var OrganizePage = (function () {
 OrganizePage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'organize-page',template:/*ion-inline-start:"/Users/andrewwong/dev/NDMobileApp/src/pages/organize/organize.html"*/'<!--\n  Generated template for the OrganizePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header >\n  <ion-navbar color="secondary">\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <img align="left" width="30%" src="networkDE.png"/>\n        </ion-col>\n        <button ion-button menuToggle right>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n      </ion-row>\n    </ion-grid>\n  </ion-navbar>\n  \n</ion-header>\n \n\n<ion-content padding>\n  <div>\n    <h1 text-center>Organize a Campaign</h1>\n    <div></div>\n    <p text-center></p>\n  </div>\n\n  <!--<ion-list>\n\n    <ion-item>\n      <ion-input type="text" placeholder="What\'s the name of your campaign?" [(ngModel)] = "campaign.title" name = "title"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-input type="text" placeholder="When is your campaign?" [(ngModel)] = "campaign.date" name = "date"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-input type="text" placeholder="Where\'s your campaign located?" [(ngModel)] = "campaign.location" name = "location"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-input type="text" placeholder="What\'s the campaign about?" [(ngModel)] = "campaign.description" name = "description"></ion-input>\n    </ion-item>\n\n  </ion-list>-->\n</ion-content>\n\n\n<ion-footer>\n  <ion-toolbar color="secondary">\n    <ion-grid>\n      <ion-row center>\n        <ion-col>\n         <img width="35%" src="networkDE.png"/> \n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n      <a href="https://twitter.com/thenetworkde?lang=en"><img width="10%" src="twittericon.png"/></a>\n      <a href="https://www.facebook.com/thenetworkde/"><img width="10%" src="facebookicon.png"/></a> \n        </ion-col>\n      </ion-row>\n      </ion-grid>\n      <p text-center>Copyright &copy; 2017</p>\n  </ion-toolbar>\n</ion-footer>\n\n\n'/*ion-inline-end:"/Users/andrewwong/dev/NDMobileApp/src/pages/organize/organize.html"*/,
+        selector: 'organize-page',template:/*ion-inline-start:"/Users/andrewwong/dev/NDMobileApp/src/pages/organize/organize.html"*/'<!--\n  Generated template for the OrganizePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header >\n  <ion-navbar color="secondary">\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <img align="left" width="30%" src="networkDE.png"/>\n        </ion-col>\n        <button ion-button menuToggle right>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n      </ion-row>\n    </ion-grid>\n  </ion-navbar>\n  \n</ion-header>\n \n\n<ion-content padding>\n  <div>\n    <h1 text-center>Organize a Campaign</h1>\n    <div></div>\n    <p text-center></p>\n  </div>\n\n  <ion-list>\n\n    <ion-item>\n      <ion-input type="text" placeholder="What\'s the name of your campaign?" name = "title"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-input type="text" placeholder="When is your campaign?" name = "date"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-input type="text" placeholder="Where\'s your campaign located?" name = "location"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-input type="text" placeholder="What\'s the campaign about?" name = "description"></ion-input>\n    </ion-item>\n\n  </ion-list>\n  <button ion-button (click)="addCampaign(title, date, location, description)">Submit</button>\n</ion-content>\n\n\n<ion-footer>\n  <ion-toolbar color="secondary">\n    <ion-grid>\n      <ion-row center>\n        <ion-col>\n         <img width="35%" src="networkDE.png"/> \n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n      <a href="https://twitter.com/thenetworkde?lang=en"><img width="10%" src="twittericon.png"/></a>\n      <a href="https://www.facebook.com/thenetworkde/"><img width="10%" src="facebookicon.png"/></a> \n        </ion-col>\n      </ion-row>\n      </ion-grid>\n      <p text-center>Copyright &copy; 2017</p>\n  </ion-toolbar>\n</ion-footer>\n\n\n'/*ion-inline-end:"/Users/andrewwong/dev/NDMobileApp/src/pages/organize/organize.html"*/,
+        providers: [__WEBPACK_IMPORTED_MODULE_2__campaigns_campaigns__["a" /* CampaignsPage */]]
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__campaigns_campaigns__["a" /* CampaignsPage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__campaigns_campaigns__["a" /* CampaignsPage */]) === "function" && _c || Object])
 ], OrganizePage);
 
-// export class Campaign {
-//       private title:string;
-//     private date:string;
-//     private location:string;
-//     private description:string;
-//     constructor(_title, _date, _location, _description) {
-//         this.title = _title;
-//         this.date = _date;
-//         this.location = _location;
-//         this.description = _description;
-//     }
-//     getTitle = function() {
-//         return this.title;
-//     }
-//     getDate = function() {
-//         return this.date;
-//     }
-//     getDescription = function() {
-//         return this.description;
-//     }
-//     getLocation = function() {
-//         return this.location;
-//     }
-// }
+var _a, _b, _c;
 //# sourceMappingURL=organize.js.map
 
 /***/ }),

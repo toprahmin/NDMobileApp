@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CampaignsPage } from '../campaigns/campaigns';
+
 
 /**
  * Generated class for the OrganizePage page.
@@ -11,44 +13,29 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @Component({
   selector: 'organize-page',
   templateUrl: 'organize.html',
+  providers: [CampaignsPage]
 })
 export class OrganizePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public campaignsPage: CampaignsPage) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad OrganizePage');
   }
+  
+  addCampaign = function(_title, _date, _location, _description) {
+    this.campaignsPage.items.push({
+      title: _title,
+      date: _date,
+      note: _description,
+      location: _location,
+      icon: 'megaphone'
+    })
+    console.log(this.campaignsPage.items)
+
+  }
 
 }
 
-// export class Campaign {
-//       private title:string;
-//     private date:string;
-//     private location:string;
-//     private description:string;
 
-//     constructor(_title, _date, _location, _description) {
-//         this.title = _title;
-//         this.date = _date;
-//         this.location = _location;
-//         this.description = _description;
-//     }
-
-//     getTitle = function() {
-//         return this.title;
-//     }
-
-//     getDate = function() {
-//         return this.date;
-//     }
-
-//     getDescription = function() {
-//         return this.description;
-//     }
-
-//     getLocation = function() {
-//         return this.location;
-//     }
-// }

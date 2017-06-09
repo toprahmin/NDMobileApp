@@ -33,7 +33,6 @@ export class CampaignsPage {
     location: this.campaigns[0].campaign.getLocation(),
     icon: 'megaphone'
     })
-
   }
 
   itemTapped(event, item) {
@@ -48,3 +47,4 @@ export class CampaignsPage {
   }
 
 }
+
