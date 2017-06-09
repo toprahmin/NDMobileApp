@@ -27475,6 +27475,35 @@ page-donate ion-col {
   text-align: center;
 }
 
+page-donate .cards-bg ion-card {
+  position: relative;
+  text-align: center;
+}
+
+page-donate .cards-bg .card-header {
+  font-size: 2.0em;
+  font-weight: bold;
+  color: #00BFFF;
+}
+
+page-donate .cards-bg .card-title {
+  position: absolute;
+  top: 36%;
+  font-size: 2.0em;
+  width: 150%;
+  font-weight: bold;
+  color: #00BFFF;
+}
+
+page-donate .cards-bg .card-subtitle {
+  font-size: 1.0em;
+  position: absolute;
+  top: 45%;
+  width: 150%;
+  font-weight: bold;
+  color: #00BFFF;
+}
+
 page-home ion-col {
   text-align: center;
 }
