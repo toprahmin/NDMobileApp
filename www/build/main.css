@@ -27455,11 +27455,15 @@ ion-navbar.toolbar {
   }
 }
 
+ion-col {
+  text-align: center;
+}
+
 page-campaigns ion-col {
   text-align: center;
 }
 
-page-community-resources ion-col {
+page-community ion-col {
   text-align: center;
 }
 
