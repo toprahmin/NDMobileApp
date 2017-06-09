@@ -9,6 +9,7 @@ import {DonatePage} from '../pages/donate/donate';
 import {CampaignsPage} from '../pages/campaigns/campaigns';
 import { CommunityPage } from '../pages/community/community';
 import { OrganizePage } from '../pages/organize/organize';
+import { CampaignPage } from '../pages/campaign/campaign';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -22,7 +23,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CampaignsPage,
     DonatePage,
     OrganizePage,
-    CommunityPage
+    CommunityPage,
+    CampaignPage
 
   ],
   imports: [
@@ -37,7 +39,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CampaignsPage,
     DonatePage,
     OrganizePage,
-    CommunityPage
+    CommunityPage,
+    CampaignPage
   ],
   providers: [
     StatusBar,
