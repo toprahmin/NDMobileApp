@@ -22,10 +22,23 @@
  
 
 <ion-content padding>
+
   <div class="section-heading scrollpoint sp-effect3">
     <h1 text-center>Dedicate this page to Campaigns</h1>
     <div class="divider"></div>
     <p text-center></p>
+  </div>
+
+  <div>
+    <ion-list>
+      <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+        <ion-icon [name]="item.icon" item-left></ion-icon>
+        {{item.title}}
+        <div class="item-note" item-right>
+          {{item.date}}
+        </div>
+      </button>
+    </ion-list>
   </div>
 </ion-content>
 

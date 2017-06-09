@@ -29705,13 +29705,13 @@ function NavController_tsickle_Closure_declarations() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_113__navigation_deep_linker__ = __webpack_require__(14);
 /* unused harmony reexport DeepLinker */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_114__navigation_ionic_page__ = __webpack_require__(230);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_114__navigation_ionic_page__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_114__navigation_ionic_page__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_115__navigation_nav_controller__ = __webpack_require__(19);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_115__navigation_nav_controller__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_115__navigation_nav_controller__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_116__navigation_nav_controller_base__ = __webpack_require__(45);
 /* unused harmony reexport NavControllerBase */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_117__navigation_nav_params__ = __webpack_require__(15);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_117__navigation_nav_params__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_117__navigation_nav_params__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_118__navigation_nav_util__ = __webpack_require__(22);
 /* unused harmony reexport DeepLinkMetadata */
 /* unused harmony reexport DeepLinkMetadataFactory */
@@ -55784,6 +55784,7 @@ exports.isFunction = isFunction;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__campaign_campaign__ = __webpack_require__(270);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CampaignsPage; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -55796,6 +55797,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 /**
  * Generated class for the CampaignsPage page.
  *
@@ -55806,20 +55808,38 @@ var CampaignsPage = (function () {
     function CampaignsPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.selectedItem = navParams.get('item');
+        this.campaigns = [];
+        this.campaigns[0] = ({ campaign: new __WEBPACK_IMPORTED_MODULE_2__campaign_campaign__["b" /* Campaign */]("Clean Up The Park", "7/10/2016", "Brandywine Park", "Lets clean up") });
+        this.items = [];
+        this.items.push({
+            title: this.campaigns[0].campaign.getTitle(),
+            date: this.campaigns[0].campaign.getDate(),
+            note: this.campaigns[0].campaign.getDescription(),
+            location: this.campaigns[0].campaign.getLocation(),
+            icon: 'megaphone'
+        });
     }
+    CampaignsPage.prototype.itemTapped = function (event, item) {
+        // That's right, we're pushing to ourselves!
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__campaign_campaign__["a" /* CampaignPage */], {
+            item: item
+        });
+    };
     CampaignsPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad CampaignsPage');
     };
     return CampaignsPage;
 }());
 CampaignsPage = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-campaigns',template:/*ion-inline-start:"/Users/Rahmir1/dev/ND-Part-2/src/pages/campaigns/campaigns.html"*/'<!--\n  Generated template for the OrganizePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header >\n  <ion-navbar color="secondary">\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <img align="left" width="30%" src="networkDE.png"/>\n        </ion-col>\n        <button ion-button menuToggle right>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n      </ion-row>\n    </ion-grid>\n  </ion-navbar>\n  \n</ion-header>\n \n\n<ion-content padding>\n  <div class="section-heading scrollpoint sp-effect3">\n    <h1 text-center>Dedicate this page to Campaigns</h1>\n    <div class="divider"></div>\n    <p text-center></p>\n  </div>\n</ion-content>\n\n\n<ion-footer>\n  <ion-toolbar color="secondary">\n    <ion-grid>\n      <ion-row center>\n        <ion-col>\n         <img width="35%" src="networkDE.png"/> \n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n      <a href="https://twitter.com/thenetworkde?lang=en"><img width="10%" src="twittericon.png"/></a>\n      <a href="https://www.facebook.com/thenetworkde/"><img width="10%" src="facebookicon.png"/></a> \n        </ion-col>\n      </ion-row>\n      </ion-grid>\n      <p text-center>Copyright &copy; 2017</p>\n  </ion-toolbar>\n</ion-footer>\n\n\n'/*ion-inline-end:"/Users/Rahmir1/dev/ND-Part-2/src/pages/campaigns/campaigns.html"*/,
+        selector: 'page-campaigns',template:/*ion-inline-start:"/Users/andrewwong/dev/NDMobileApp/src/pages/campaigns/campaigns.html"*/'<!--\n  Generated template for the OrganizePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header >\n  <ion-navbar color="secondary">\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <img align="left" width="30%" src="networkDE.png"/>\n        </ion-col>\n        <button ion-button menuToggle right>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n      </ion-row>\n    </ion-grid>\n  </ion-navbar>\n  \n</ion-header>\n \n\n<ion-content padding>\n\n  <div class="section-heading scrollpoint sp-effect3">\n    <h1 text-center>Dedicate this page to Campaigns</h1>\n    <div class="divider"></div>\n    <p text-center></p>\n  </div>\n\n  <div>\n    <ion-list>\n      <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">\n        <ion-icon [name]="item.icon" item-left></ion-icon>\n        {{item.title}}\n        <div class="item-note" item-right>\n          {{item.date}}\n        </div>\n      </button>\n    </ion-list>\n  </div>\n</ion-content>\n\n\n<ion-footer>\n  <ion-toolbar color="secondary">\n    <ion-grid>\n      <ion-row center>\n        <ion-col>\n         <img width="35%" src="networkDE.png"/> \n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n      <a href="https://twitter.com/thenetworkde?lang=en"><img width="10%" src="twittericon.png"/></a>\n      <a href="https://www.facebook.com/thenetworkde/"><img width="10%" src="facebookicon.png"/></a> \n        </ion-col>\n      </ion-row>\n      </ion-grid>\n      <p text-center>Copyright &copy; 2017</p>\n  </ion-toolbar>\n</ion-footer>\n\n\n'/*ion-inline-end:"/Users/andrewwong/dev/NDMobileApp/src/pages/campaigns/campaigns.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object])
 ], CampaignsPage);
 
+var _a, _b;
 //# sourceMappingURL=campaigns.js.map
 
 /***/ }),
@@ -55858,11 +55878,11 @@ var CommunityPage = (function () {
     return CommunityPage;
 }());
 CommunityPage = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-community',template:/*ion-inline-start:"/Users/Rahmir1/dev/ND-Part-2/src/pages/community/community.html"*/'<!--\n  Generated template for the OrganizePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header >\n  <ion-navbar color="secondary">\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <img align="left" width="30%" src="networkDE.png"/>\n        </ion-col>\n        <button ion-button menuToggle right>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n      </ion-row>\n    </ion-grid>\n  </ion-navbar>\n  \n</ion-header>\n \n\n<ion-content padding>\n  <div>\n    <h1 text-center>Dedicate this page to Organize</h1>\n    <div></div>\n    <p text-center></p>\n  </div>\n\n  <div>\n      <h1>Reach Out</h1>\n      \n      <p>Get in contact with your local, county, or state governments to start the convertation</p>\n  </div>\n    \n  <div>\n      <h2>Be Heard</h2>\n      <p>Use the links below to reach out to your representatives:</p>            \n          <table>\n              <thead>\n              <tr>\n                  <th>Type</th>\n                  <th>Department</th>\n                  <th>Reach Out</th>\n              </tr>\n              <\n              </thead>\n              <tbody>\n              <tr>\n                  <td>City of Wilmington</td>\n                  <td>Mayor\'s Office of Constituent Services</td>\n                  <td>cityhelp@WilmingtonDE.gov</td>\n              </tr>\n              <tr>\n                  <td>New Castle County</td>\n                  <td>Office of Human Resources</td>\n                  <td>Ph: 302-395-5180</td>\n              </tr>\n              <tr>\n                  <td>The State of Delaware</td>\n                  <td>Division of Human Relations</td>\n                  <td>(877) 54-HUMAN (544-8626) (Toll Free)</td>\n              </tr>\n              </tbody>\n          </table>\n  </div>\n       \n</ion-content>\n\n\n<ion-footer>\n  <ion-toolbar color="secondary">\n    <ion-grid>\n      <ion-row center>\n        <ion-col>\n         <img width="35%" src="networkDE.png"/> \n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n      <a href="https://twitter.com/thenetworkde?lang=en"><img width="10%" src="twittericon.png"/></a>\n      <a href="https://www.facebook.com/thenetworkde/"><img width="10%" src="facebookicon.png"/></a> \n        </ion-col>\n      </ion-row>\n      </ion-grid>\n      <p text-center>Copyright &copy; 2017</p>\n  </ion-toolbar>\n</ion-footer>\n\n\n'/*ion-inline-end:"/Users/Rahmir1/dev/ND-Part-2/src/pages/community/community.html"*/,
+        selector: 'page-community',template:/*ion-inline-start:"/Users/andrewwong/dev/NDMobileApp/src/pages/community/community.html"*/'<!--\n  Generated template for the OrganizePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header >\n  <ion-navbar color="secondary">\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <img align="left" width="30%" src="networkDE.png"/>\n        </ion-col>\n        <button ion-button menuToggle right>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n      </ion-row>\n    </ion-grid>\n  </ion-navbar>\n  \n</ion-header>\n \n\n<ion-content padding>\n  <div>\n    <h1 text-center>Dedicate this page to Organize</h1>\n    <div></div>\n    <p text-center></p>\n  </div>\n\n  <div>\n      <h1>Reach Out</h1>\n      \n      <p>Get in contact with your local, county, or state governments to start the convertation</p>\n  </div>\n    \n  <div>\n      <h2>Be Heard</h2>\n      <p>Use the links below to reach out to your representatives:</p>            \n          <table>\n              <thead>\n              <tr>\n                  <th>Type</th>\n                  <th>Department</th>\n                  <th>Reach Out</th>\n              </tr>\n              <\n              </thead>\n              <tbody>\n              <tr>\n                  <td>City of Wilmington</td>\n                  <td>Mayor\'s Office of Constituent Services</td>\n                  <td>cityhelp@WilmingtonDE.gov</td>\n              </tr>\n              <tr>\n                  <td>New Castle County</td>\n                  <td>Office of Human Resources</td>\n                  <td>Ph: 302-395-5180</td>\n              </tr>\n              <tr>\n                  <td>The State of Delaware</td>\n                  <td>Division of Human Relations</td>\n                  <td>(877) 54-HUMAN (544-8626) (Toll Free)</td>\n              </tr>\n              </tbody>\n          </table>\n  </div>\n       \n</ion-content>\n\n\n<ion-footer>\n  <ion-toolbar color="secondary">\n    <ion-grid>\n      <ion-row center>\n        <ion-col>\n         <img width="35%" src="networkDE.png"/> \n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n      <a href="https://twitter.com/thenetworkde?lang=en"><img width="10%" src="twittericon.png"/></a>\n      <a href="https://www.facebook.com/thenetworkde/"><img width="10%" src="facebookicon.png"/></a> \n        </ion-col>\n      </ion-row>\n      </ion-grid>\n      <p text-center>Copyright &copy; 2017</p>\n  </ion-toolbar>\n</ion-footer>\n\n\n'/*ion-inline-end:"/Users/andrewwong/dev/NDMobileApp/src/pages/community/community.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
 ], CommunityPage);
 
 //# sourceMappingURL=community.js.map
@@ -55903,11 +55923,11 @@ var DonatePage = (function () {
     return DonatePage;
 }());
 DonatePage = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-donate',template:/*ion-inline-start:"/Users/Rahmir1/dev/ND-Part-2/src/pages/donate/donate.html"*/'<!--\n  Generated template for the OrganizePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header >\n  <ion-navbar color="secondary">\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <img align="left" width="30%" src="networkDE.png"/>\n        </ion-col>\n        <button ion-button menuToggle right>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n      </ion-row>\n    </ion-grid>\n  </ion-navbar>\n  \n</ion-header>\n \n\n<ion-content padding>\n  <div class="section-heading scrollpoint sp-effect3">\n    <h1 text-center>Dedicate this page to Donate</h1>\n    <div class="divider"></div>\n    <p text-center></p>\n  </div>\n</ion-content>\n\n\n<ion-footer>\n  <ion-toolbar color="secondary">\n    <ion-grid>\n      <ion-row center>\n        <ion-col>\n         <img width="35%" src="networkDE.png"/> \n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n      <a href="https://twitter.com/thenetworkde?lang=en"><img width="10%" src="twittericon.png"/></a>\n      <a href="https://www.facebook.com/thenetworkde/"><img width="10%" src="facebookicon.png"/></a> \n        </ion-col>\n      </ion-row>\n      </ion-grid>\n      <p text-center>Copyright &copy; 2017</p>\n  </ion-toolbar>\n</ion-footer>\n\n\n'/*ion-inline-end:"/Users/Rahmir1/dev/ND-Part-2/src/pages/donate/donate.html"*/,
+        selector: 'page-donate',template:/*ion-inline-start:"/Users/andrewwong/dev/NDMobileApp/src/pages/donate/donate.html"*/'<!--\n  Generated template for the OrganizePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header >\n  <ion-navbar color="secondary">\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <img align="left" width="30%" src="networkDE.png"/>\n        </ion-col>\n        <button ion-button menuToggle right>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n      </ion-row>\n    </ion-grid>\n  </ion-navbar>\n  \n</ion-header>\n \n\n<ion-content padding>\n  <div class="section-heading scrollpoint sp-effect3">\n    <h1 text-center>Dedicate this page to Donate</h1>\n    <div class="divider"></div>\n    <p text-center></p>\n  </div>\n</ion-content>\n\n\n<ion-footer>\n  <ion-toolbar color="secondary">\n    <ion-grid>\n      <ion-row center>\n        <ion-col>\n         <img width="35%" src="networkDE.png"/> \n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n      <a href="https://twitter.com/thenetworkde?lang=en"><img width="10%" src="twittericon.png"/></a>\n      <a href="https://www.facebook.com/thenetworkde/"><img width="10%" src="facebookicon.png"/></a> \n        </ion-col>\n      </ion-row>\n      </ion-grid>\n      <p text-center>Copyright &copy; 2017</p>\n  </ion-toolbar>\n</ion-footer>\n\n\n'/*ion-inline-end:"/Users/andrewwong/dev/NDMobileApp/src/pages/donate/donate.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
 ], DonatePage);
 
 //# sourceMappingURL=donate.js.map
@@ -55948,13 +55968,37 @@ var OrganizePage = (function () {
     return OrganizePage;
 }());
 OrganizePage = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-organize',template:/*ion-inline-start:"/Users/Rahmir1/dev/ND-Part-2/src/pages/organize/organize.html"*/'<!--\n  Generated template for the OrganizePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header >\n  <ion-navbar color="secondary">\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <img align="left" width="30%" src="networkDE.png"/>\n        </ion-col>\n        <button ion-button menuToggle right>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n      </ion-row>\n    </ion-grid>\n  </ion-navbar>\n  \n</ion-header>\n \n\n<ion-content padding>\n  <div>\n    <h1 text-center>Dedicate this page to Organize</h1>\n    <div></div>\n    <p text-center></p>\n  </div>\n\n  \n</ion-content>\n\n\n<ion-footer>\n  <ion-toolbar color="secondary">\n    <ion-grid>\n      <ion-row center>\n        <ion-col>\n         <img width="35%" src="networkDE.png"/> \n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n      <a href="https://twitter.com/thenetworkde?lang=en"><img width="10%" src="twittericon.png"/></a>\n      <a href="https://www.facebook.com/thenetworkde/"><img width="10%" src="facebookicon.png"/></a> \n        </ion-col>\n      </ion-row>\n      </ion-grid>\n      <p text-center>Copyright &copy; 2017</p>\n  </ion-toolbar>\n</ion-footer>\n\n\n'/*ion-inline-end:"/Users/Rahmir1/dev/ND-Part-2/src/pages/organize/organize.html"*/,
+        selector: 'organize-page',template:/*ion-inline-start:"/Users/andrewwong/dev/NDMobileApp/src/pages/organize/organize.html"*/'<!--\n  Generated template for the OrganizePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header >\n  <ion-navbar color="secondary">\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <img align="left" width="30%" src="networkDE.png"/>\n        </ion-col>\n        <button ion-button menuToggle right>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n      </ion-row>\n    </ion-grid>\n  </ion-navbar>\n  \n</ion-header>\n \n\n<ion-content padding>\n  <div>\n    <h1 text-center>Organize a Campaign</h1>\n    <div></div>\n    <p text-center></p>\n  </div>\n\n  <!--<ion-list>\n\n    <ion-item>\n      <ion-input type="text" placeholder="What\'s the name of your campaign?" [(ngModel)] = "campaign.title" name = "title"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-input type="text" placeholder="When is your campaign?" [(ngModel)] = "campaign.date" name = "date"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-input type="text" placeholder="Where\'s your campaign located?" [(ngModel)] = "campaign.location" name = "location"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-input type="text" placeholder="What\'s the campaign about?" [(ngModel)] = "campaign.description" name = "description"></ion-input>\n    </ion-item>\n\n  </ion-list>-->\n</ion-content>\n\n\n<ion-footer>\n  <ion-toolbar color="secondary">\n    <ion-grid>\n      <ion-row center>\n        <ion-col>\n         <img width="35%" src="networkDE.png"/> \n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n      <a href="https://twitter.com/thenetworkde?lang=en"><img width="10%" src="twittericon.png"/></a>\n      <a href="https://www.facebook.com/thenetworkde/"><img width="10%" src="facebookicon.png"/></a> \n        </ion-col>\n      </ion-row>\n      </ion-grid>\n      <p text-center>Copyright &copy; 2017</p>\n  </ion-toolbar>\n</ion-footer>\n\n\n'/*ion-inline-end:"/Users/andrewwong/dev/NDMobileApp/src/pages/organize/organize.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
 ], OrganizePage);
 
+// export class Campaign {
+//       private title:string;
+//     private date:string;
+//     private location:string;
+//     private description:string;
+//     constructor(_title, _date, _location, _description) {
+//         this.title = _title;
+//         this.date = _date;
+//         this.location = _location;
+//         this.description = _description;
+//     }
+//     getTitle = function() {
+//         return this.title;
+//     }
+//     getDate = function() {
+//         return this.date;
+//     }
+//     getDescription = function() {
+//         return this.description;
+//     }
+//     getLocation = function() {
+//         return this.location;
+//     }
+// }
 //# sourceMappingURL=organize.js.map
 
 /***/ }),
@@ -55993,11 +56037,11 @@ var VolunteerPage = (function () {
     return VolunteerPage;
 }());
 VolunteerPage = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-volunteer',template:/*ion-inline-start:"/Users/Rahmir1/dev/ND-Part-2/src/pages/volunteer/volunteer.html"*/'<!--\n  Generated template for the VolunteerPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header >\n  <ion-navbar color="secondary">\n    <ion-grid>\n        <ion-row>\n          <ion-col>\n            <img align="left" width="30%" src="networkDE.png"/>\n          </ion-col>\n          <button ion-button menuToggle right>\n            <ion-icon name="menu"></ion-icon>\n          </button>\n        </ion-row>\n    </ion-grid>\n  </ion-navbar>\n  \n</ion-header>\n\n\n<!--\n<ion-content padding>\n  The world is your oyster.\n  <p>\n    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.\n  </p>\n</ion-content>\n-->\n<ion-content padding>\n  <div class="section-heading scrollpoint sp-effect3">\n    <h1 text-center>Dedicate this page to Volunteer</h1>\n    <div class="divider"></div>\n    <p text-center></p>\n  </div>\n</ion-content>\n\n\n<ion-footer>\n  <ion-toolbar color="secondary">\n    <ion-grid>\n      <ion-row center>\n        <ion-col>\n         <img width="35%" src="networkDE.png"/> \n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n      <a href="https://twitter.com/thenetworkde?lang=en"><img width="10%" src="twittericon.png"/></a>\n      <a href="https://www.facebook.com/thenetworkde/"><img width="10%" src="facebookicon.png"/></a> \n        </ion-col>\n      </ion-row>\n      </ion-grid>\n      <p text-center>Copyright &copy; 2017</p>\n  </ion-toolbar>\n</ion-footer>\n\n\n'/*ion-inline-end:"/Users/Rahmir1/dev/ND-Part-2/src/pages/volunteer/volunteer.html"*/,
+        selector: 'page-volunteer',template:/*ion-inline-start:"/Users/andrewwong/dev/NDMobileApp/src/pages/volunteer/volunteer.html"*/'<!--\n  Generated template for the VolunteerPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header >\n  <ion-navbar color="secondary">\n    <ion-grid>\n        <ion-row>\n          <ion-col>\n            <img align="left" width="30%" src="networkDE.png"/>\n          </ion-col>\n          <button ion-button menuToggle right>\n            <ion-icon name="menu"></ion-icon>\n          </button>\n        </ion-row>\n    </ion-grid>\n  </ion-navbar>\n  \n</ion-header>\n\n\n<!--\n<ion-content padding>\n  The world is your oyster.\n  <p>\n    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.\n  </p>\n</ion-content>\n-->\n<ion-content padding>\n  <div class="section-heading scrollpoint sp-effect3">\n    <h1 text-center>Dedicate this page to Volunteer</h1>\n    <div class="divider"></div>\n    <p text-center></p>\n  </div>\n</ion-content>\n\n\n<ion-footer>\n  <ion-toolbar color="secondary">\n    <ion-grid>\n      <ion-row center>\n        <ion-col>\n         <img width="35%" src="networkDE.png"/> \n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n      <a href="https://twitter.com/thenetworkde?lang=en"><img width="10%" src="twittericon.png"/></a>\n      <a href="https://www.facebook.com/thenetworkde/"><img width="10%" src="facebookicon.png"/></a> \n        </ion-col>\n      </ion-row>\n      </ion-grid>\n      <p text-center>Copyright &copy; 2017</p>\n  </ion-toolbar>\n</ion-footer>\n\n\n'/*ion-inline-end:"/Users/andrewwong/dev/NDMobileApp/src/pages/volunteer/volunteer.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
 ], VolunteerPage);
 
 //# sourceMappingURL=volunteer.js.map
@@ -56042,9 +56086,9 @@ var HomePage = (function () {
 }());
 HomePage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"/Users/Rahmir1/dev/ND-Part-2/src/pages/home/home.html"*/'<ion-header >\n  <ion-navbar color="secondary">\n    <ion-grid>\n        <ion-row>\n          <ion-col>\n            <img align="left" width="30%" src="networkDE.png"/>\n          </ion-col>\n          <button ion-button menuToggle right>\n            <ion-icon name="menu"></ion-icon>\n          </button>\n        </ion-row>\n    </ion-grid>\n  </ion-navbar>\n  \n</ion-header>\n \n\n<!--\n<ion-content padding>\n  The world is your oyster.\n  <p>\n    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.\n  </p>\n</ion-content>\n-->\n<ion-content padding>\n  <div class="section-heading scrollpoint sp-effect3">\n    <h1 text-center>Our Time Is Now</h1>\n    <div class="divider"></div>\n    <p text-center>Discover How You Can Give back</p>\n  </div>\n</ion-content>\n\n\n<ion-footer>\n  <ion-toolbar color="secondary">\n    <ion-grid>\n      <ion-row center>\n        <ion-col>\n         <img width="35%" src="networkDE.png"/> \n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n      <a href="https://twitter.com/thenetworkde?lang=en"><img width="10%" src="twittericon.png"/></a>\n      <a href="https://www.facebook.com/thenetworkde/"><img width="10%" src="facebookicon.png"/></a> \n        </ion-col>\n      </ion-row>\n      </ion-grid>\n      <p text-center>Copyright &copy; 2017</p>\n  </ion-toolbar>\n</ion-footer>\n\n\n'/*ion-inline-end:"/Users/Rahmir1/dev/ND-Part-2/src/pages/home/home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"/Users/andrewwong/dev/NDMobileApp/src/pages/home/home.html"*/'<ion-header >\n  <ion-navbar color="secondary">\n    <ion-grid>\n        <ion-row>\n          <ion-col>\n            <img align="left" width="30%" src="networkDE.png"/>\n          </ion-col>\n          <button ion-button menuToggle right>\n            <ion-icon name="menu"></ion-icon>\n          </button>\n        </ion-row>\n    </ion-grid>\n  </ion-navbar>\n  \n</ion-header>\n \n\n<!--\n<ion-content padding>\n  The world is your oyster.\n  <p>\n    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.\n  </p>\n</ion-content>\n-->\n<ion-content padding>\n  <div class="section-heading scrollpoint sp-effect3">\n    <h1 text-center>Our Time Is Now</h1>\n    <div class="divider"></div>\n    <p text-center>Discover How You Can Give back</p>\n  </div>\n</ion-content>\n\n\n<ion-footer>\n  <ion-toolbar color="secondary">\n    <ion-grid>\n      <ion-row center>\n        <ion-col>\n         <img width="35%" src="networkDE.png"/> \n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n      <a href="https://twitter.com/thenetworkde?lang=en"><img width="10%" src="twittericon.png"/></a>\n      <a href="https://www.facebook.com/thenetworkde/"><img width="10%" src="facebookicon.png"/></a> \n        </ion-col>\n      </ion-row>\n      </ion-grid>\n      <p text-center>Copyright &copy; 2017</p>\n  </ion-toolbar>\n</ion-footer>\n\n\n'/*ion-inline-end:"/Users/andrewwong/dev/NDMobileApp/src/pages/home/home.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
 ], HomePage);
 
 //# sourceMappingURL=home.js.map
@@ -74624,8 +74668,9 @@ webpackAsyncContext.id = 197;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_campaigns_campaigns__ = __webpack_require__(98);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_community_community__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_organize_organize__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_status_bar__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_splash_screen__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_campaign_campaign__ = __webpack_require__(270);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_status_bar__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_splash_screen__ = __webpack_require__(107);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -74633,6 +74678,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -74659,7 +74705,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_7__pages_campaigns_campaigns__["a" /* CampaignsPage */],
             __WEBPACK_IMPORTED_MODULE_6__pages_donate_donate__["a" /* DonatePage */],
             __WEBPACK_IMPORTED_MODULE_9__pages_organize_organize__["a" /* OrganizePage */],
-            __WEBPACK_IMPORTED_MODULE_8__pages_community_community__["a" /* CommunityPage */]
+            __WEBPACK_IMPORTED_MODULE_8__pages_community_community__["a" /* CommunityPage */],
+            __WEBPACK_IMPORTED_MODULE_10__pages_campaign_campaign__["a" /* CampaignPage */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -74681,11 +74728,12 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_7__pages_campaigns_campaigns__["a" /* CampaignsPage */],
             __WEBPACK_IMPORTED_MODULE_6__pages_donate_donate__["a" /* DonatePage */],
             __WEBPACK_IMPORTED_MODULE_9__pages_organize_organize__["a" /* OrganizePage */],
-            __WEBPACK_IMPORTED_MODULE_8__pages_community_community__["a" /* CommunityPage */]
+            __WEBPACK_IMPORTED_MODULE_8__pages_community_community__["a" /* CommunityPage */],
+            __WEBPACK_IMPORTED_MODULE_10__pages_campaign_campaign__["a" /* CampaignPage */]
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_10__ionic_native_status_bar__["a" /* StatusBar */],
-            __WEBPACK_IMPORTED_MODULE_11__ionic_native_splash_screen__["a" /* SplashScreen */],
+            __WEBPACK_IMPORTED_MODULE_11__ionic_native_status_bar__["a" /* StatusBar */],
+            __WEBPACK_IMPORTED_MODULE_12__ionic_native_splash_screen__["a" /* SplashScreen */],
             { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] }
         ]
     })
@@ -74952,7 +75000,7 @@ __decorate([
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */])
 ], MyApp.prototype, "nav", void 0);
 MyApp = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({template:/*ion-inline-start:"/Users/Rahmir1/dev/ND-Part-2/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar color="secondary">\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/Users/Rahmir1/dev/ND-Part-2/src/app/app.html"*/
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({template:/*ion-inline-start:"/Users/andrewwong/dev/NDMobileApp/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar color="secondary">\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/Users/andrewwong/dev/NDMobileApp/src/app/app.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
 ], MyApp);
@@ -112324,6 +112372,72 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
 //# sourceMappingURL=main.js.map
+
+/***/ }),
+/* 265 */,
+/* 266 */,
+/* 267 */,
+/* 268 */,
+/* 269 */,
+/* 270 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CampaignPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Campaign; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var CampaignPage = (function () {
+    function CampaignPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        // If we navigated to this page, we will have an item available as a nav param
+        this.selectedItem = navParams.get('item');
+    }
+    return CampaignPage;
+}());
+CampaignPage = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+        selector: 'campaign-page',template:/*ion-inline-start:"/Users/andrewwong/dev/NDMobileApp/src/pages/campaign/campaign.html"*/'<ion-header >\n  <ion-navbar color="secondary">\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <img align="left" width="30%" src="networkDE.png"/>\n        </ion-col>\n        <button ion-button menuToggle right>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n      </ion-row>\n    </ion-grid>\n  </ion-navbar>\n  \n</ion-header>\n\n<ion-content>\n  <ion-list>\n      <h3>\n      {{selectedItem.title}}\n      </h3>\n      <ion-item>{{selectedItem.date}}</ion-item>\n      <ion-item>{{selectedItem.location}}</ion-item>\n      <ion-item>{{selectedItem.note}}</ion-item>\n  </ion-list>\n  <div *ngIf="selectedItem" padding>\n    You navigated here from <b>{{selectedItem.title}}</b>\n  </div>\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar color="secondary">\n    <ion-grid>\n      <ion-row center>\n        <ion-col>\n         <img width="35%" src="networkDE.png"/> \n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col>\n      <a href="https://twitter.com/thenetworkde?lang=en"><img width="10%" src="twittericon.png"/></a>\n      <a href="https://www.facebook.com/thenetworkde/"><img width="10%" src="facebookicon.png"/></a> \n        </ion-col>\n      </ion-row>\n      </ion-grid>\n      <p text-center>Copyright &copy; 2017</p>\n  </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"/Users/andrewwong/dev/NDMobileApp/src/pages/campaign/campaign.html"*/
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object])
+], CampaignPage);
+
+var Campaign = (function () {
+    function Campaign(_title, _date, _location, _description) {
+        this.getTitle = function () {
+            return this.title;
+        };
+        this.getDate = function () {
+            return this.date;
+        };
+        this.getDescription = function () {
+            return this.description;
+        };
+        this.getLocation = function () {
+            return this.location;
+        };
+        this.title = _title;
+        this.date = _date;
+        this.location = _location;
+        this.description = _description;
+    }
+    return Campaign;
+}());
+
+var _a, _b;
+//# sourceMappingURL=campaign.js.map
 
 /***/ })
 /******/ ]);
